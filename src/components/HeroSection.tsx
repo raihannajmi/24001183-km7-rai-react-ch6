@@ -1,4 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 export default function HeroSection() {
+  const navigate = useNavigate();
+
+  const handleRentClick = () => {
+    navigate("/rent");
+  };
+
   return (
     <section className="bg-blue-100 py-20">
       <div className="container mx-auto flex flex-col lg:flex-row items-center">
@@ -10,7 +18,10 @@ export default function HeroSection() {
             Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas
             terbaik dengan harga terjangkau.
           </p>
-          <button className="mt-6 bg-green-500 text-white px-6 py-3 rounded hover:bg-green-600">
+          <button
+            onClick={handleRentClick}
+            className="mt-6 bg-green-500 text-white px-6 py-3 rounded hover:bg-green-600"
+          >
             Mulai Sewa Mobil
           </button>
         </div>
